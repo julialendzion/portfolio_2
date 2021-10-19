@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.navigation li {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  margin: 20px;
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div p {
+  margin: 0;
+  font-size: 1vw;
+  position: fixed;
+  /* right: 30px; */
+  margin-top: 0px;
+  margin-left: -11.5vw;
+  width: 10vw;
+  text-align: right;
+}
+
+.navigation li:hover,
+.navigation li.selected {
+  background: black;
+
+  transform: scale(1.5);
+}
+section {
+  height: 100vh;
+  position: relative;
+}
+
+section > div {
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
