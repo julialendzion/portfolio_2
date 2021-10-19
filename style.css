@@ -2,8 +2,9 @@
 
 :root {
   --color-1: #81899d;
-  --color-2: #969ead;
+  --color-2: #ced0d5;
   --color-3: white;
+  --color-4: #969ead;
   --font-1: neue-haas-grotesk-display;
 }
 
@@ -17,8 +18,8 @@ body {
   margin: 0;
   padding: 0;
   position: fixed;
-  right: 20px;
-  top: 50%;
+  right: 2.5vw;
+  top: 30%;
   transform: translateY(-50%);
   z-index: 999;
   font-family: var(--font-1);
@@ -29,7 +30,7 @@ body {
   height: 10px;
   background: transparent;
   border-radius: 50%;
-  margin: 20px;
+  margin: 30px;
   border: 2px solid var(--color-3);
   cursor: pointer;
   transition: transform 0.2s;
@@ -43,7 +44,7 @@ div p {
   font-size: calc(10px + 0.2vw);
   position: fixed;
   /* right: 30px; */
-  margin-top: -3px;
+  margin-top: -0.22vw;
   margin-left: -11.5vw;
   width: 10vw;
   text-align: right;
@@ -60,12 +61,11 @@ section {
   position: relative;
 }
 
-section > div {
+section > div > #napis {
   font-size: 30px;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 4vw;
+  top: 100px;
 }
 
 /*TEXT HOME PAGE*/
@@ -73,33 +73,30 @@ section > div {
 h1 {
   font-family: var(--font-1);
   font-weight: 200;
-  font-size: calc(50px + 2vw);
+  font-size: calc(70px + 2vw);
   width: 7em;
   letter-spacing: 1vw;
   padding: 0;
   color: var(--color-2);
+  margin: 10px 0 0 0;
 }
 h2 {
+  margin: 10px 0 0 0;
   font-family: var(--font-1);
   font-weight: 200;
-  font-size: calc(50px + 2vw);
+  font-size: calc(70px + 2vw);
   width: 7em;
   letter-spacing: 1vw;
-  margin-left: 3vw;
   padding: 0;
   color: var(--color-3);
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: white;
 }
 
-#title {
-  /* width: 50%; */
-}
 #title2 {
-  position: absolute;
   z-index: 1000;
-  top: 1.2em;
-  left: 1.6em;
-  margin-top: 0;
+  position: absolute;
+  top: 1vw;
+  left: 1vw;
 }
