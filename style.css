@@ -38,7 +38,7 @@ body {
   flex-direction: row-reverse;
 }
 
-div p {
+.navigation div p {
   color: var(--color-3);
   margin: 0;
   font-size: calc(10px + 0.2vw);
@@ -99,4 +99,20 @@ h2 {
   position: absolute;
   top: 1vw;
   left: 1vw;
+}
+
+#about {
+  display: grid;
+  grid-template-columns: 25% 45%;
+  column-gap: 10%;
+}
+
+#about img {
+  max-width: 100%;
+  padding-left: 4vw;
+}
+
+section > #about {
+  position: absolute;
+  top: 10%;
 }
