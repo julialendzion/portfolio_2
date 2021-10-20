@@ -1,4 +1,5 @@
 "use strict";
+
 window.addEventListener("DOMContentLoaded", loadSVG);
 function loadSVG() {
   console.log("load the SVG");

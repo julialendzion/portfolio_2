@@ -8,6 +8,14 @@ function resetSelection() {
     navigation.children[i].classList.remove("selected");
   }
 }
+var resizeTimeout;
+window.addEventListener("resize", function (event) {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function () {
+    window.location.reload();
+  }, 500);
+});
+
 window.addEventListener("scroll", function () {
   scrollTop = window.scrollY;
   sections.forEach(function (section, i) {
