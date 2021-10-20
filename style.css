@@ -116,3 +116,26 @@ section > #about {
   position: absolute;
   top: 10%;
 }
+
+/* Animation */
+
+.draw {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: dash 10s forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+main #svg_path {
+  width: 27%;
+  margin-top: -1vw;
+  margin-bottom: auto;
+  position: absolute;
+  top: 0;
+  left: 3vw;
+}
