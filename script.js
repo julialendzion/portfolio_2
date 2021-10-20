@@ -8,6 +8,8 @@ function resetSelection() {
     navigation.children[i].classList.remove("selected");
   }
 }
+
+//RELOAD when RESIZING THE SCREEN
 var resizeTimeout;
 window.addEventListener("resize", function (event) {
   clearTimeout(resizeTimeout);

@@ -117,6 +117,45 @@ section > #about {
   top: 10%;
 }
 
+/*skills dots*/
+
+#skills {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  column-gap: 2vw;
+}
+
+/* #about {
+  opacity: 0;
+} */
+
+#container {
+  display: flex;
+}
+
+#container h4 {
+  margin: 1vw 0 1vw 0;
+  width: 5vw;
+}
+.dot {
+  margin: 1vw;
+  height: 1vw;
+  width: 1vw;
+  background-color: var(--color-3);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dotempty {
+  margin: 1vw;
+  height: 0.8vw;
+  width: 0.8vw;
+  border: 1px solid;
+  border-color: var(--color-3);
+  border-radius: 50%;
+  display: inline-block;
+}
 /* Animation */
 
 .draw {
