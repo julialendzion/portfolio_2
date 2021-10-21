@@ -103,7 +103,7 @@ h2 {
 
 #about {
   display: grid;
-  grid-template-columns: 25% 45%;
+  grid-template-columns: 25% 46%;
   column-gap: 10%;
 }
 
@@ -117,7 +117,7 @@ section > #about {
   top: 10%;
 }
 
-/*skills dots*/
+/*about and skills dots*/
 
 #skills {
   display: flex;
@@ -126,31 +126,48 @@ section > #about {
   column-gap: 2vw;
 }
 
-/* #about {
-  opacity: 0;
-} */
+#about p,
+h3,
+h4 {
+  font-family: var(--font-1);
+}
 
+#about p {
+  font-size: 1.2vw;
+  text-align: justify;
+  color: white;
+}
+#about h3 {
+  letter-spacing: 0.2vw;
+  font-size: 2vw;
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-2);
+}
 #container {
   display: flex;
 }
 
 #container h4 {
-  margin: 1vw 0 1vw 0;
-  width: 5vw;
+  margin: 0.7vw 0 0.7vw 0;
+  width: 7vw;
+  font-size: 1.2vw;
+  font-weight: 200;
+  color: white;
 }
 .dot {
-  margin: 1vw;
-  height: 1vw;
-  width: 1vw;
+  margin: 0.95vw 0.6vw 0.7vw 0.6vw;
+  height: 1.1vw;
+  width: 1.1vw;
   background-color: var(--color-3);
   border-radius: 50%;
   display: inline-block;
 }
 
 .dotempty {
-  margin: 1vw;
-  height: 0.8vw;
-  width: 0.8vw;
+  margin: 0.95vw 0.6vw 0.7vw 0.6vw;
+  height: 0.9vw;
+  width: 0.9vw;
   border: 1px solid;
   border-color: var(--color-3);
   border-radius: 50%;
@@ -177,4 +194,35 @@ main #svg_path {
   position: absolute;
   top: 0;
   left: 3vw;
+}
+
+/* box draw*/
+
+#box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: violet;
+}
+
+#box svg,
+#box svg rect {
+  position: absolute;
+  top: -1vw;
+  left: 1vw;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+#box svg rect {
+  stroke: turquoise;
+  stroke-width: 4;
+  transition: 2s;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+#box:hover svg rect {
+  stroke-dashoffset: 0;
 }
