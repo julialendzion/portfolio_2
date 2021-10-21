@@ -38,4 +38,54 @@ navigation.querySelectorAll("li").forEach(function (item, i) {
   });
 });
 
-gsap.to("#title2", { opacity: 100, x: "1vw", y: "1vw", duration: 0.5, ease: "ease-out" });
+gsap.to("#title2", {
+  opacity: 100,
+  x: "1vw",
+  y: "1vw",
+  duration: 1,
+  ease: "ease-out",
+  scrollTrigger: { trigger: "#title", start: "top 50%", end: "bottom 80%", scrub: true },
+});
+
+gsap.to("#title2", {
+  opacity: 100,
+  x: "0vw",
+  y: "0",
+  duration: 1,
+  ease: "ease-out",
+  scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 80%", scrub: true },
+});
+
+gsap.to("#line", {
+  y: "-35vw",
+  opacity: 0,
+
+  scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 80%", scrub: true },
+});
+
+document.querySelectorAll(".letter").forEach((elm, i) => {
+  elm.classList.add("ani");
+  elm.style.animationDelay = `${i / 12}s`;
+});
+
+// gsap.to("#scroll", {
+//   opacity: 0,
+//   ease: "ease-out",
+//   scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 99%", scrub: true },
+// });
+gsap.to("#scroll", {
+  opacity: 0,
+  scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 100%", scrub: true },
+});
+
+gsap.to("#title", {
+  y: "-25vw",
+  opacity: 0,
+  scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 100%", scrub: true },
+});
+
+gsap.to("#title2", {
+  y: "-25vw",
+  opacity: 0,
+  scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
+});

@@ -31,7 +31,7 @@ body {
   background: transparent;
   border-radius: 50%;
   margin: 30px;
-  border: 2px solid var(--color-3);
+  border: 1.5px solid var(--color-3);
   cursor: pointer;
   transition: transform 0.2s;
   display: flex;
@@ -45,7 +45,7 @@ body {
   position: fixed;
   /* right: 30px; */
   margin-top: -0.22vw;
-  margin-left: -11.5vw;
+  margin-left: -12vw;
   width: 10vw;
   text-align: right;
 }
@@ -118,6 +118,40 @@ section > #about {
   top: 10%;
 }
 
+#line {
+  position: absolute;
+  top: 39vh;
+  height: 65vh;
+  left: 70vw;
+}
+
+#scroll {
+  position: absolute;
+  top: 34vh;
+  font-family: var(--font-1);
+  left: 67vw;
+  font-size: 1.1vw;
+  letter-spacing: 0.3vw;
+  color: var(--color-2);
+}
+#scroll {
+  display: flex;
+  flex-direction: row;
+}
+#scroll span {
+  /* opacity: 0; */
+}
+.ani {
+  animation: ani_kf 1s infinite ease-in-out alternate;
+}
+
+@keyframes ani_kf {
+  100% {
+    /* opacity: 100%; */
+    transform: translateY(0.2vw);
+  }
+}
+
 /*about and skills dots*/
 
 #skills {
@@ -179,7 +213,7 @@ h4 {
 .draw {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
-  animation: dash 10s forwards;
+  animation: dash 20s forwards;
 }
 
 @keyframes dash {
@@ -197,37 +231,29 @@ main #svg_path {
   left: 3vw;
 }
 
-/* box draw*/
-
-#box {
-  position: absolute;
+/*PROJECTS*/
+.main {
   width: 100px;
   height: 100px;
-  background-color: violet;
+  background-color: var(--color-2);
 }
 
-#box svg,
-#box svg rect {
+.overlay {
+  width: 100px;
+  height: 100px;
+  display: none;
   position: absolute;
-  top: -1vw;
-  left: 1vw;
-  width: 100%;
-  height: 100%;
-  fill: transparent;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  opacity: 0.75;
+  color: white;
 }
 
-#box svg rect {
-  stroke: turquoise;
-  stroke-width: 4;
-  transition: 2s;
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
+li:hover .overlay {
+  display: block;
 }
 
-#box:hover svg rect {
-  stroke-dashoffset: 0;
-}
-
-.load {
-  transform: translate(-1vw, 2vw);
+#projects ul {
+  list-style: none;
 }
