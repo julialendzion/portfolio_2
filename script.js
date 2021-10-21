@@ -37,3 +37,5 @@ navigation.querySelectorAll("li").forEach(function (item, i) {
     });
   });
 });
+
+gsap.to("#title2", { opacity: 100, x: "1vw", y: "1vw", duration: 0.5, ease: "ease-out" });

@@ -97,8 +97,9 @@ h2 {
 #title2 {
   z-index: 1000;
   position: absolute;
-  top: 1vw;
-  left: 1vw;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 
 #about {
@@ -225,4 +226,8 @@ main #svg_path {
 
 #box:hover svg rect {
   stroke-dashoffset: 0;
+}
+
+.load {
+  transform: translate(-1vw, 2vw);
 }
