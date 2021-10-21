@@ -92,17 +92,21 @@ gsap.to("#title2", {
 
 document.querySelector("#fisherbear").addEventListener("click", showFisher);
 function showFisher() {
+  // document.querySelector("#fisherbear_outline").classList.add("scale");
+  document.querySelector("#fisherbear>h1").classList.add("scale");
+
   gsap.to("#fisherbear_outline", {
     opacity: 100,
     x: "1vw",
     y: "1vw",
-    duration: 2,
+    duration: 0.7,
     ease: "ease-out",
   });
+
   gsap.to("#fisherbear_opis", {
     y: "2vw",
     opacity: 100,
-    duration: 1000,
+    duration: 500,
     ease: "ease-in",
   });
   document.querySelector("#fisherbear_opis").classList.remove("hidden");
