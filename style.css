@@ -138,16 +138,13 @@ section > #about {
   display: flex;
   flex-direction: row;
 }
-#scroll span {
-  /* opacity: 0; */
-}
+
 .ani {
   animation: ani_kf 1s infinite ease-in-out alternate;
 }
 
 @keyframes ani_kf {
   100% {
-    /* opacity: 100%; */
     transform: translateY(0.2vw);
   }
 }
@@ -232,28 +229,28 @@ main #svg_path {
 }
 
 /*PROJECTS*/
-.main {
+.box_wrapper {
   width: 100px;
   height: 100px;
-  background-color: var(--color-2);
 }
-
-.overlay {
+.box {
   width: 100px;
   height: 100px;
-  display: none;
+  background-color: white;
+}
+.border {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: black;
-  opacity: 0.75;
-  color: white;
+  width: 100px;
+  height: 100px;
+  border: solid 1px black;
+}
+.border:hover {
+  margin-top: -1vw;
 }
 
-li:hover .overlay {
-  display: block;
-}
-
-#projects ul {
-  list-style: none;
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2px, 200px));
+  gap: 1vw;
+  justify-content: center;
 }

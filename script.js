@@ -89,3 +89,13 @@ gsap.to("#title2", {
   opacity: 0,
   scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
 });
+
+document.querySelector(".portfolioPhotoBox").addEventListener("mouseover", showBox);
+document.querySelector(".portfolioPhotoBox").addEventListener("mouseout", hideBox);
+
+function showBox() {
+  document.querySelector(".btn_projects").classList.remove("hidden");
+}
+function hideBox() {
+  document.querySelector(".btn_projects").classList.add("hidden");
+}
