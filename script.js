@@ -90,12 +90,20 @@ gsap.to("#title2", {
   scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
 });
 
-document.querySelector(".portfolioPhotoBox").addEventListener("mouseover", showBox);
-document.querySelector(".portfolioPhotoBox").addEventListener("mouseout", hideBox);
-
-function showBox() {
-  document.querySelector(".btn_projects").classList.remove("hidden");
-}
-function hideBox() {
-  document.querySelector(".btn_projects").classList.add("hidden");
+document.querySelector("#fisherbear").addEventListener("click", showFisher);
+function showFisher() {
+  gsap.to("#fisherbear_outline", {
+    opacity: 100,
+    x: "1vw",
+    y: "1vw",
+    duration: 2,
+    ease: "ease-out",
+  });
+  gsap.to("#fisherbear_opis", {
+    y: "2vw",
+    opacity: 100,
+    duration: 1000,
+    ease: "ease-in",
+  });
+  document.querySelector("#fisherbear_opis").classList.remove("hidden");
 }

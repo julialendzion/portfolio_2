@@ -229,7 +229,7 @@ main #svg_path {
 }
 
 /*PROJECTS*/
-.box_wrapper {
+/* .box_wrapper {
   width: 100px;
   height: 100px;
 }
@@ -253,4 +253,27 @@ main #svg_path {
   grid-template-columns: repeat(auto-fill, minmax(2px, 200px));
   gap: 1vw;
   justify-content: center;
+} */
+
+#projects h1,
+#projects h2 {
+  font-size: calc(30px + 2vw);
+  margin: 0;
+}
+#projects h2 {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+.opis {
+  opacity: 0;
+}
+#projects h1:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
