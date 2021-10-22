@@ -257,14 +257,15 @@ main #svg_path {
 
 #projects h1,
 #projects h2 {
-  font-size: calc(30px + 2vw);
+  font-size: calc(20px + 2vw);
   margin: 0 0 0 4vw;
+  width: 100vw;
 }
 #projects h2 {
   position: absolute;
   top: 0;
   opacity: 0;
-  transform: scale(1.2);
+  transform: scale(0.5);
   z-index: -1;
 }
 
@@ -275,13 +276,56 @@ main #svg_path {
   opacity: 0;
 }
 #projects h1 {
-  color: white;
-}
-#projects h1:hover {
-  transform: scale(1.2);
-  cursor: pointer;
   color: var(--color-2);
 }
-.scale {
+/* #projects h1:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  color: white;
+} */
+/* .scale {
   transform: scale(1.2);
+} */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  /* background-color: #eee; */
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  color: white;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+h1 .extra {
+  display: none;
+  font-size: calc(5px + 1vw);
+  letter-spacing: 0;
+}
+
+#projects h1:hover .extra {
+  display: block;
+}
+h1 .extra_js {
+  display: none;
+  font-size: calc(5px + 1vw);
+  letter-spacing: 0;
 }

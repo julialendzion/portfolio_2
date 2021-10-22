@@ -90,24 +90,60 @@ gsap.to("#title2", {
   scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
 });
 
-document.querySelector("#fisherbear").addEventListener("click", showFisher);
-function showFisher() {
-  // document.querySelector("#fisherbear_outline").classList.add("scale");
-  document.querySelector("#fisherbear>h1").classList.add("scale");
+// document.querySelector("#fisherbear").addEventListener("click", showFisher);
+// function showFisher() {
+//   // document.querySelector("#fisherbear_outline").classList.add("scale");
+//   document.querySelector("#fisherbear>h1").classList.add("scale");
 
-  gsap.to("#fisherbear_outline", {
-    opacity: 100,
-    x: "1vw",
-    y: "1vw",
-    duration: 0.7,
-    ease: "ease-out",
-  });
+//   gsap.to("#fisherbear_outline", {
+//     opacity: 100,
+//     x: "1vw",
+//     y: "1vw",
+//     duration: 0.7,
+//     ease: "ease-out",
+//   });
 
-  gsap.to("#fisherbear_opis", {
-    y: "2vw",
-    opacity: 100,
-    duration: 500,
-    ease: "ease-in",
+//   gsap.to("#fisherbear_opis", {
+//     y: "2vw",
+//     opacity: 100,
+//     duration: 500,
+//     ease: "ease-in",
+//   });
+//   document.querySelector("#fisherbear_opis").classList.remove("hidden");
+// }
+
+let coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    let child = this.firstElementChild;
+    let extra_js = child.firstElementChild;
+    let extra = extra_js.nextElementSibling;
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+
+      child.style.color = "var(--color-2)";
+      extra_js.style.display = "none";
+      extra.style.opacity = "100";
+      extra.style.position = "default";
+      // document.querySelector(".project_name>h1").style.color = "var(--color-2)";
+      // document.querySelector(".project_name>h1>.extra_js").style.display = "none";
+      // document.querySelector(".project_name>h1>.extra").style.opacity = "100";
+      // document.querySelector(".project_name>h1>.extra").style.position = "default";
+    } else {
+      content.style.display = "block";
+      child.style.color = "white";
+      extra_js.style.display = "block";
+      extra.style.opacity = "0";
+      extra.style.position = "absolute";
+      // document.querySelector(".project_name>h1").style.color = "white";
+      // document.querySelector(".project_name>h1>.extra_js").style.display = "block";
+      // document.querySelector(".project_name>h1>.extra").style.opacity = "0";
+      // document.querySelector(".project_name>h1>.extra").style.position = "absolute";
+    }
   });
-  document.querySelector("#fisherbear_opis").classList.remove("hidden");
 }
