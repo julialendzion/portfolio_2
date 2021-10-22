@@ -126,7 +126,8 @@ for (i = 0; i < coll.length; i++) {
     if (content.style.display === "block") {
       content.style.display = "none";
 
-      child.style.color = "var(--color-2)";
+      child.style.color = "none";
+
       extra_js.style.display = "none";
       extra.style.opacity = "100";
       extra.style.position = "default";

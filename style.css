@@ -2,6 +2,7 @@
 
 :root {
   --color-1: #81899d;
+  --color-5: #717d9d;
   --color-2: #ced0d5;
   --color-3: white;
   --color-4: #969ead;
@@ -228,33 +229,6 @@ main #svg_path {
   left: 3vw;
 }
 
-/*PROJECTS*/
-/* .box_wrapper {
-  width: 100px;
-  height: 100px;
-}
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-}
-.border {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: solid 1px black;
-}
-.border:hover {
-  margin-top: -1vw;
-}
-
-#projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(2px, 200px));
-  gap: 1vw;
-  justify-content: center;
-} */
-
 #projects h1,
 #projects h2 {
   font-size: calc(20px + 2vw);
@@ -272,20 +246,12 @@ main #svg_path {
 .hidden {
   display: none;
 }
-.opis {
-  opacity: 0;
-}
+
 #projects h1 {
   color: var(--color-2);
 }
-/* #projects h1:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  color: white;
-} */
-/* .scale {
-  transform: scale(1.2);
-} */
+
+/* COLLAPSIBLE */
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
@@ -312,13 +278,24 @@ main #svg_path {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: rgba(255, 250, 250, 0.247);
+  width: 70vw;
+  margin: 0 0 0 3vw;
+  padding: 20px;
+  font-family: var(--font-1);
+}
+
+.content h3 {
+  font-weight: 200;
+  font-size: calc(5px + 2vw);
+  letter-spacing: 0.5vw;
+  margin: 0;
 }
 
 h1 .extra {
   display: none;
-  font-size: calc(5px + 1vw);
-  letter-spacing: 0;
+  font-size: calc(7px + 1vw);
+  letter-spacing: 1px;
 }
 
 #projects h1:hover .extra {
@@ -326,6 +303,10 @@ h1 .extra {
 }
 h1 .extra_js {
   display: none;
-  font-size: calc(5px + 1vw);
-  letter-spacing: 0;
+  font-size: calc(7px + 1vw);
+  letter-spacing: 1px;
+}
+
+#projects h1:hover {
+  color: white;
 }
