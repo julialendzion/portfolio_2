@@ -227,87 +227,178 @@ main #svg_path {
   top: 0;
   left: 3vw;
 }
-
+/* 
 #projects h1,
 #projects h2 {
   font-size: calc(20px + 2vw);
   margin: 0 0 0 4vw;
   width: 100vw;
-}
-#projects h2 {
+} */
+/* #projects h2 {
   position: absolute;
   top: 0;
   opacity: 0;
   transform: scale(0.5);
   z-index: -1;
-}
+} */
 
 .hidden {
   display: none;
 }
-
+/* 
 #projects h1 {
   color: var(--color-2);
   height: 5vw;
+} */
+
+/**/
+.accordion {
+  margin-left: 4vw;
+  max-width: 75vw;
 }
-
-/* COLLAPSIBLE */
-
-/* Style the button that is used to open and close the collapsible content */
-.collapsible {
-  /* background-color: #eee; */
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
+.accordion-item:hover {
+  transform: scale(1.01);
+  color: white;
 }
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.collapsible:hover {
-  transform: translateY(-2.5px);
-
-  cursor: pointer;
+.accordion-item:hover h3 {
+  transform: scale(1.01);
   color: white;
 }
 
-/* Style the collapsible content. Note: hidden by default */
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: rgba(255, 250, 250, 0.247);
-  width: 70vw;
-  margin: 2vw 0 0 5vw;
-  padding: 20px;
-  font-family: var(--font-1);
-}
-
-.content h3 {
-  font-weight: 200;
-  font-size: calc(5px + 2vw);
-  letter-spacing: 0.5vw;
-  margin: 0;
-}
-
-h1 .extra {
-  display: none;
-  font-size: calc(7px + 1vw);
-  letter-spacing: 1px;
-}
-
-#projects h1:hover .extra {
+.accordion-item:hover h3 .extra {
   display: block;
 }
-h1 .extra_js {
+
+.accordion-item {
+  background-color: transparent;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in 0.3s;
+}
+.accordion-item.active {
+  background-color: var(--color-1);
+  transition: background-color 0.2s ease-in 0s;
+}
+.accordion-item.active .accordion-header {
+  color: black;
+  background-color: var(--color-1);
+  transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
+}
+.accordion-item.active .accordion-header h3:before,
+.accordion-item.active .accordion-header h3:after {
+  background-color: black;
+  transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
+}
+.accordion-item.active .accordion-header h3:before {
   display: none;
-  font-size: calc(7px + 1vw);
-  letter-spacing: 1px;
+}
+.accordion-item.active .accordion-header h3:after {
+  transform: rotate(90deg);
+}
+.accordion-item.active .accordion-body {
+  max-height: 900px;
+  padding: 0 15px 15px;
+  transition: max-height 0.3s ease-in 0s, padding 0.2s ease-in 0s;
+}
+.accordion-item.active .accordion-body p {
+  opacity: 1;
+  transition: opacity 0.2s ease-in 0.2s;
 }
 
-#projects h1:hover {
+.accordion-item.active h3 .extra {
+  display: block;
+}
+.accordion-header {
+  color: white;
+  background-color: var(--color-1);
+  border-radius: 5px;
+  padding: 25px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
+}
+.accordion-header h3 {
+  position: relative;
+  font-size: calc(10px + 2vw);
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  margin: 0;
+  color: var(--color-2);
+  font-family: var(--font-1);
+  width: 100%;
+  letter-spacing: 0.5vw;
+}
+
+.accordion-item h2 {
+  font-size: calc(10px + 2vw);
+  position: absolute;
+  top: 15px;
+  letter-spacing: 0.5vw;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.move {
+  animation: ani_outline 1s forwards ease-in-out alternate;
+}
+
+@keyframes ani_outline {
+  100% {
+    opacity: 100%;
+    transform: translate(1vw, 1vw);
+  }
+}
+
+.accordion-header h3 .extra {
+  font-size: calc(5px + 1vw);
+  display: none;
+  letter-spacing: 2px;
+}
+
+.accordion-header h3:before,
+.accordion-header h3:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  transition: background-color 0.2s ease-in 0s, transform 0.2s ease 0s;
+}
+.accordion-header h3:before {
+  width: 10px;
+  height: 2px;
+  right: 0;
+  top: calc(50% - 1px);
+}
+.accordion-header h3:after {
+  width: 2px;
+  height: 10px;
+  right: 4px;
+  top: calc(50% - 5px);
+  transform: none;
+}
+.accordion-body {
+  max-height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
+}
+.accordion-body p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0;
+  margin: 0;
+  transition: opacity 0.2s ease-in 0s;
+}
+
+.credits {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 14px;
+}
+.credits p {
+  color: #94a2e6;
+  margin: 0;
+}
+.credits a {
   color: white;
 }

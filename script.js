@@ -83,59 +83,77 @@ gsap.to("#title2", {
   scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
 });
 
-// document.querySelector("#fisherbear").addEventListener("click", showFisher);
-// function showFisher() {
-//   // document.querySelector("#fisherbear_outline").classList.add("scale");
-//   document.querySelector("#fisherbear>h1").classList.add("scale");
+// let coll = document.getElementsByClassName("collapsible");
+// let i;
 
-//   gsap.to("#fisherbear_outline", {
-//     opacity: 100,
-//     x: "1vw",
-//     y: "1vw",
-//     duration: 0.7,
-//     ease: "ease-out",
-//   });
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function () {
+//     this.classList.toggle("active");
+//     let content = this.nextElementSibling;
+//     let child = this.firstElementChild;
+//     let extra_js = child.firstElementChild;
+//     let extra = extra_js.nextElementSibling;
 
-//   gsap.to("#fisherbear_opis", {
-//     y: "2vw",
-//     opacity: 100,
-//     duration: 500,
-//     ease: "ease-in",
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//       child.style.color = "var(--color-2)";
+//       extra_js.style.display = "none";
+//       extra.style.opacity = "100";
+//       extra.style.position = "default";
+//       // document.querySelector(".project_name>h1").style.color = "var(--color-2)";
+//       // document.querySelector(".project_name>h1>.extra_js").style.display = "none";
+//       // document.querySelector(".project_name>h1>.extra").style.opacity = "100";
+//       // document.querySelector(".project_name>h1>.extra").style.position = "default";
+//     } else {
+//       content.style.display = "block";
+//       child.style.color = "white";
+//       extra_js.style.display = "block";
+//       extra.style.opacity = "0";
+//       extra.style.position = "absolute";
+//       // document.querySelector(".project_name>h1").style.color = "white";
+//       // document.querySelector(".project_name>h1>.extra_js").style.display = "block";
+//       // document.querySelector(".project_name>h1>.extra").style.opacity = "0";
+//       // document.querySelector(".project_name>h1>.extra").style.position = "absolute";
+//     }
 //   });
-//   document.querySelector("#fisherbear_opis").classList.remove("hidden");
 // }
 
-let coll = document.getElementsByClassName("collapsible");
-let i;
+/* This can be an external module */
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    let content = this.nextElementSibling;
-    let child = this.firstElementChild;
-    let extra_js = child.firstElementChild;
-    let extra = extra_js.nextElementSibling;
+// document.querySelector(".collapse-title").addEventListener("mouseover", hoverProjects);
 
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      child.style.color = "var(--color-2)";
-      extra_js.style.display = "none";
-      extra.style.opacity = "100";
-      extra.style.position = "default";
-      // document.querySelector(".project_name>h1").style.color = "var(--color-2)";
-      // document.querySelector(".project_name>h1>.extra_js").style.display = "none";
-      // document.querySelector(".project_name>h1>.extra").style.opacity = "100";
-      // document.querySelector(".project_name>h1>.extra").style.position = "default";
-    } else {
-      content.style.display = "block";
-      child.style.color = "white";
-      extra_js.style.display = "block";
-      extra.style.opacity = "0";
-      extra.style.position = "absolute";
-      // document.querySelector(".project_name>h1").style.color = "white";
-      // document.querySelector(".project_name>h1>.extra_js").style.display = "block";
-      // document.querySelector(".project_name>h1>.extra").style.opacity = "0";
-      // document.querySelector(".project_name>h1>.extra").style.position = "absolute";
-    }
-  });
-}
+// function hoverProjects() {
+//   document.querySelector(".extra").style.display = "block";
+//   // document.querySelector(".collapse-title").style.transform = "red";
+//   document.querySelector(".collapse-title").addEventListener("mouseout", hoverOut);
+// }
+// function hoverOut() {
+//   // document.querySelector(".collapse-title").style.color = "#ced0d5";
+//   document.querySelector(".extra").style.display = "none";
+// }
+
+const accordionItem = document.querySelectorAll(".accordion-item");
+
+const onClickAccordionHeader = (e) => {
+  if (e.currentTarget.parentNode.classList.contains("active")) {
+    e.currentTarget.parentNode.classList.remove("active");
+  } else {
+    Array.prototype.forEach.call(accordionItem, (e) => e.classList.remove("active"));
+    e.currentTarget.parentNode.classList.add("active");
+  }
+};
+
+const init = () => {
+  Array.prototype.forEach.call(accordionItem, (e) => e.querySelector(".accordion-header").addEventListener("click", onClickAccordionHeader, false));
+};
+
+document.addEventListener("DOMContentLoaded", init);
+
+// OUTLINE ANIMATION TO WORK ON
+
+// const firstChild = document.querySelector(".accordion").firstElementChild;
+// firstChild.addEventListener("click", showOutline);
+
+// function showOutline() {
+//   document.querySelector("#fisheroutline").classList.toggle("move");
+// }
