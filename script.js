@@ -1,16 +1,16 @@
-var scrollTop = 0;
-var index = 0;
+let scrollTop = 0;
+let index = 0;
 const windowHeight = window.innerHeight;
 const sections = document.querySelectorAll("section");
 const navigation = document.querySelector(".navigation");
 function resetSelection() {
-  for (var i = 0; i < navigation.children.length; i++) {
+  for (let i = 0; i < navigation.children.length; i++) {
     navigation.children[i].classList.remove("selected");
   }
 }
 
 //RELOAD when RESIZING THE SCREEN
-var resizeTimeout;
+let resizeTimeout;
 window.addEventListener("resize", function (event) {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function () {
@@ -78,15 +78,8 @@ gsap.to("#scroll", {
   scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 100%", scrub: true },
 });
 
-gsap.to("#title", {
-  y: "-25vw",
-  opacity: 0,
-  scrollTrigger: { trigger: "#line", start: "top 50%", end: "bottom 100%", scrub: true },
-});
-
 gsap.to("#title2", {
   y: "-25vw",
-  opacity: 0,
   scrollTrigger: { trigger: "#line", start: "top 20%", end: "bottom 90%", scrub: true },
 });
 
@@ -125,9 +118,7 @@ for (i = 0; i < coll.length; i++) {
 
     if (content.style.display === "block") {
       content.style.display = "none";
-
-      child.style.color = "none";
-
+      child.style.color = "var(--color-2)";
       extra_js.style.display = "none";
       extra.style.opacity = "100";
       extra.style.position = "default";
