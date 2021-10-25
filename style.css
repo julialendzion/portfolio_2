@@ -104,18 +104,19 @@ h2 {
 
 #about {
   display: grid;
-  grid-template-columns: 25% 46%;
+  grid-template-columns: 25% 44%;
   column-gap: 10%;
 }
 
 #about img {
-  max-width: 100%;
+  max-width: 95%;
   padding-left: 4vw;
 }
 
 section > #about {
   position: absolute;
-  top: 10%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #line {
@@ -154,8 +155,9 @@ section > #about {
 #skills {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: start;
+  justify-content: space-between;
   column-gap: 2vw;
+  margin-bottom: 2vw;
 }
 
 #about p,
@@ -164,18 +166,33 @@ h4 {
   font-family: var(--font-1);
 }
 
+#info {
+  margin-top: -2.5vw;
+}
+
 #about p {
-  font-size: 1.2vw;
+  font-size: calc(3px + 1vw);
   text-align: justify;
   color: white;
+  letter-spacing: 0.4px;
 }
 #about h3 {
   letter-spacing: 0.2vw;
-  font-size: 2vw;
+  font-size: calc(6px + 2vw);
   font-weight: 400;
   margin: 0;
   color: var(--color-2);
 }
+#about a {
+  letter-spacing: 0.1vw;
+  font-size: calc(8px + 1vw);
+  font-weight: 400;
+  font-family: var(--font-1);
+  color: var(--color-2);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #container {
   display: flex;
 }
@@ -183,7 +200,7 @@ h4 {
 #container h4 {
   margin: 0.7vw 0 0.7vw 0;
   width: 7vw;
-  font-size: 1.2vw;
+  font-size: calc(3px + 1vw);
   font-weight: 200;
   color: white;
 }
@@ -220,7 +237,7 @@ h4 {
 }
 
 main #svg_path {
-  width: 27%;
+  width: 26%;
   margin-top: -1vw;
   margin-bottom: auto;
   position: absolute;
@@ -253,8 +270,11 @@ main #svg_path {
 
 /**/
 .accordion {
-  margin-left: 4vw;
-  max-width: 75vw;
+  margin-left: 6vw;
+  max-width: 72vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .accordion-item:hover {
   transform: scale(1.01);
@@ -272,8 +292,8 @@ main #svg_path {
 .accordion-item {
   background-color: transparent;
   margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.1); */
+  border-bottom: 1px solid var(--color-2);
   transition: background-color 0.2s ease-in 0.3s;
 }
 .accordion-item.active {
@@ -281,13 +301,13 @@ main #svg_path {
   transition: background-color 0.2s ease-in 0s;
 }
 .accordion-item.active .accordion-header {
-  color: black;
+  color: white;
   background-color: var(--color-1);
   transition: background-color 0.2s ease-in 0s, color 0.2s ease-in 0.2s;
 }
 .accordion-item.active .accordion-header h3:before,
 .accordion-item.active .accordion-header h3:after {
-  background-color: black;
+  background-color: white;
   transition: background-color 0.2s ease-in 0.2s, transform 0.2s ease 0.1s;
 }
 .accordion-item.active .accordion-header h3:before {
@@ -297,8 +317,8 @@ main #svg_path {
   transform: rotate(90deg);
 }
 .accordion-item.active .accordion-body {
-  max-height: 900px;
-  padding: 0 15px 15px;
+  max-height: 500px;
+  padding: 15px 10px 10px 10px;
   transition: max-height 0.3s ease-in 0s, padding 0.2s ease-in 0s;
 }
 .accordion-item.active .accordion-body p {
@@ -313,15 +333,16 @@ main #svg_path {
   color: white;
   background-color: var(--color-1);
   border-radius: 5px;
-  padding: 25px 15px;
+  padding: 10px;
+  height: 5.6vw;
   cursor: pointer;
   transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
 }
 .accordion-header h3 {
   position: relative;
-  font-size: calc(10px + 2vw);
-  font-weight: 500;
+  font-size: calc(8px + 2vw);
   letter-spacing: 0.025em;
+  font-weight: 200;
   margin: 0;
   color: var(--color-2);
   font-family: var(--font-1);
@@ -387,18 +408,26 @@ main #svg_path {
   opacity: 0;
   margin: 0;
   transition: opacity 0.2s ease-in 0s;
+  font-family: var(--font-1);
+  color: white;
 }
 
-.credits {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  font-size: 14px;
+.body-wrapper a {
+  font-family: var(--font-1);
+  color: var(--color-3);
+  letter-spacing: 1px;
+
+  text-decoration: underline;
 }
-.credits p {
-  color: #94a2e6;
+
+.body-wrapper {
   margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 30% 60%;
+  column-gap: 6%;
 }
-.credits a {
-  color: white;
+
+.accordion-body img {
+  max-width: 100%;
 }
