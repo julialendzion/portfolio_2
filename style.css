@@ -53,7 +53,6 @@ body {
 .navigation li:hover,
 .navigation li.selected {
   background: var(--color-3);
-
   transform: scale(1.5);
 }
 section {
@@ -244,45 +243,34 @@ main #svg_path {
   top: 0;
   left: 3vw;
 }
-/* 
-#projects h1,
-#projects h2 {
-  font-size: calc(20px + 2vw);
-  margin: 0 0 0 4vw;
-  width: 100vw;
-} */
-/* #projects h2 {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transform: scale(0.5);
-  z-index: -1;
-} */
 
 .hidden {
   display: none;
 }
-/* 
-#projects h1 {
-  color: var(--color-2);
-  height: 5vw;
-} */
 
-/**/
+/*PROJECTS MENUUU*/
 .accordion {
   margin-left: 6vw;
-  max-width: 72vw;
+  max-width: 73vw;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 5vw;
+  /* top: 50%;
+  transform: translateY(-50%); */
 }
 .accordion-item:hover {
   transform: scale(1.01);
+
   color: white;
 }
+
 .accordion-item:hover h3 {
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
+  transform: translateY(-1vw);
   color: white;
+}
+
+.accordion-item.active h3 {
+  transform: translateY(-1vw);
 }
 
 .accordion-item:hover h3 .extra {
@@ -334,13 +322,13 @@ main #svg_path {
   background-color: var(--color-1);
   border-radius: 5px;
   padding: 10px;
-  height: 5.6vw;
+  height: 4.5vw;
   cursor: pointer;
   transition: background-color 0.2s ease-out 0.3s, color 0.2s ease-out 0s;
 }
 .accordion-header h3 {
   position: relative;
-  font-size: calc(8px + 2vw);
+  font-size: calc(6px + 2vw);
   letter-spacing: 0.025em;
   font-weight: 200;
   margin: 0;
@@ -403,23 +391,36 @@ main #svg_path {
   transition: max-height 0.2s ease-out 0s, padding 0.1s ease-out 0.2s;
 }
 .accordion-body p {
-  font-size: 0.875rem;
-  line-height: 1.6;
   opacity: 0;
   margin: 0;
   transition: opacity 0.2s ease-in 0s;
   font-family: var(--font-1);
-  color: white;
 }
 
 .body-wrapper a {
   font-family: var(--font-1);
   color: var(--color-3);
   letter-spacing: 1px;
-
+  font-size: calc(7px + 1vw);
   text-decoration: underline;
+  padding-top: 2vw;
 }
 
+.body-wrapper a:hover {
+  color: var(--color-2);
+  cursor: pointer;
+}
+
+.body-wrapper p {
+  font-size: calc(3px + 1vw);
+  text-align: justify;
+  color: white;
+  letter-spacing: 0.4px;
+}
+
+.body-wrapper p:nth-child(2) {
+  margin-bottom: 1vw;
+}
 .body-wrapper {
   margin: 0;
   padding: 0;
