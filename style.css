@@ -271,6 +271,7 @@ main #svg_path {
 
 .accordion-item.active h3 {
   transform: translateY(-1vw);
+  color: white;
 }
 
 .accordion-item:hover h3 .extra {
@@ -401,7 +402,7 @@ main #svg_path {
   font-family: var(--font-1);
   color: var(--color-3);
   letter-spacing: 1px;
-  font-size: calc(7px + 1vw);
+  font-size: calc(6px + 1vw);
   text-decoration: underline;
   padding-top: 2vw;
 }
@@ -415,20 +416,28 @@ main #svg_path {
   font-size: calc(3px + 1vw);
   text-align: justify;
   color: white;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.04vw;
 }
 
-.body-wrapper p:nth-child(2) {
+.body-wrapper p:nth-child(1) {
   margin-bottom: 1vw;
 }
+.body-wrapper p:nth-child(2) {
+  margin-bottom: 1vw;
+  word-spacing: 0.2vw;
+}
 .body-wrapper {
-  margin: 0;
+  margin-bottom: 1vw;
   padding: 0;
   display: grid;
-  grid-template-columns: 30% 60%;
+  grid-template-columns: 33% 60%;
   column-gap: 6%;
 }
 
 .accordion-body img {
   max-width: 100%;
+}
+
+.accordion-body img:nth-child(2) {
+  margin-top: 1vw;
 }
