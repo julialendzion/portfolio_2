@@ -8,6 +8,28 @@
   --font-1: neue-haas-grotesk-display;
 }
 
+#absolute {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.082);
+  width: 100vw;
+  transition: bottom 0.5s;
+  font-family: var(--font-1);
+  color: white;
+  letter-spacing: 1px;
+  display: flex;
+}
+#absolute p {
+  padding: 1vw;
+  margin: 0;
+}
+#absolute a {
+  text-decoration: underline;
+  padding: 1vw;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -166,7 +188,7 @@ h4 {
 }
 
 #info {
-  margin-top: -2.5vw;
+  margin-top: -1vw;
 }
 
 #about p {
@@ -247,13 +269,17 @@ main #svg_path {
 .hidden {
   display: none;
 }
-
+#projects {
+  height: min-content !important;
+  padding-bottom: 20vw;
+}
 /*PROJECTS MENUUU*/
 .accordion {
   margin-left: 6vw;
   max-width: 73vw;
-  position: absolute;
+  /* position: absolute; */
   margin-top: 5vw;
+  /* height: 100vh; */
   /* top: 50%;
   transform: translateY(-50%); */
 }

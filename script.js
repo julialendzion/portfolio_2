@@ -157,3 +157,14 @@ document.addEventListener("DOMContentLoaded", init);
 // function showOutline() {
 //   document.querySelector("#fisheroutline").classList.toggle("move");
 // }
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("absolute").style.bottom = "0";
+  } else {
+    document.getElementById("absolute").style.bottom = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+};
